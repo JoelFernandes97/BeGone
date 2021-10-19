@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
 import { Courgette_400Regular } from "@expo-google-fonts/courgette";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
