@@ -9,40 +9,24 @@ import {
   Image,
 } from "react-native";
 
-function register(props) {
-  const [userName, setUserName] = useState();
+function login(props) {
   const [emailAddress, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [confirmPassword, setConfirmPassword] = useState();
 
-  const onRegister = () => {
-    console.log("** LOG: You pressed register (regiserScreen)**");
+  const onLogin = () => {
+    console.log("** LOG: You pressed Login (LoginScreen) **");
     //add a database to save data
   };
 
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.header}>
-        <Text style={styles.heading2}>Create Your Account</Text>
+        <Text style={styles.heading2}>Login To Your Account</Text>
         <Text style={styles.heading4}>
-          Please Enter Your Information To Create Your Account
+          Please Enter Your Information To Login
         </Text>
       </View>
       <View>
-        <View>
-          <Image
-            style={styles.iconTextInput}
-            source={require("../assets/userIcon.png")}
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={setUserName}
-            value={userName}
-            placeholder="User Name"
-            placeholderTextColor="#000000"
-            keyboardType="default"
-          />
-        </View>
         <View>
           <Image
             style={styles.iconTextInput}
@@ -72,25 +56,10 @@ function register(props) {
             secureTextEntry={true}
           />
         </View>
-        <View>
-          <Image
-            style={styles.iconTextInput}
-            source={require("../assets/passwordIcon.png")}
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={setConfirmPassword}
-            value={confirmPassword}
-            placeholder="Confirm Password"
-            placeholderTextColor="#000000"
-            keyboardType="default"
-            secureTextEntry={true}
-          />
-        </View>
       </View>
-      <View style={styles.registerButton}>
-        <TouchableOpacity onPress={onRegister}>
-          <Text style={styles.btnText}>Register</Text>
+      <View style={styles.loginButton}>
+        <TouchableOpacity onPress={onLogin}>
+          <Text style={styles.btnText}>Login</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.borderDesign1} />
@@ -139,7 +108,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "black",
   },
-  registerButton: {
+  loginButton: {
     width: "60%",
     height: 70,
     marginTop: 50,
@@ -156,7 +125,7 @@ const styles = StyleSheet.create({
   borderDesign1: {
     width: "100%",
     height: 50,
-    marginTop: 30,
+    marginTop: 205,
     backgroundColor: "#ffcc56",
   },
   borderDesign2: {
@@ -165,4 +134,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#078192",
   },
 });
-export default register;
+export default login;

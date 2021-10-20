@@ -1,14 +1,16 @@
 import React from "react";
 import { Image, Text, StyleSheet, View, TouchableOpacity } from "react-native";
 
-const login = () => {
-  console.log("** LOG: You pressed login **");
-};
-const register = () => {
-  console.log("** LOG: You pressed register **");
-};
+function welcomeScreen({ navigation }) {
+  const login = () => {
+    console.log("** LOG: You pressed login **");
+    navigation.navigate("loginScreen");
+  };
+  const onRegister = () => {
+    console.log("** LOG: You pressed register **");
+    navigation.navigate("registerScreen");
+  };
 
-function welcomeScreen(props) {
   return (
     <View style={styles.background}>
       <View style={styles.logoContainer}>
@@ -22,7 +24,7 @@ function welcomeScreen(props) {
         </TouchableOpacity>
       </View>
       <View style={styles.registerButton}>
-        <TouchableOpacity onPress={register}>
+        <TouchableOpacity onPress={onRegister}>
           <Text style={styles.btnText}>Register</Text>
         </TouchableOpacity>
       </View>
@@ -78,12 +80,13 @@ const styles = StyleSheet.create({
   },
   borderDesign1: {
     width: "100%",
-    height: 70,
+    height: 50,
+    marginTop: 35,
     backgroundColor: "#ffcc56",
   },
   borderDesign2: {
     width: "100%",
-    height: 70,
+    height: 57,
     backgroundColor: "#078192",
   },
 });
